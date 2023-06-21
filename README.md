@@ -40,4 +40,4 @@ This script is licensed under the [MIT License](https://opensource.org/licenses/
 
 ## Troubleshooting
 
-If you encounter any issues or have questions, please [open an issue](https://github.com/your-repository-url/issues) on the repository.
+If you encounter any issues or have questions, please [open an issue](https://github.com/remmover/Parser.git) on the repository.
