@@ -36,7 +36,7 @@ This script is licensed under the [MIT License](https://opensource.org/licenses/
 ## Acknowledgements
 
 - This script utilizes the [pandas](https://pandas.pydata.org/) library for reading Excel files and data manipulation.
-- Developed by [Your Name]
+- Developed by remmover
 
 ## Troubleshooting
 
