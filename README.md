@@ -8,6 +8,7 @@ To run this script, you need to have the following installed:
 
 - Python 3.x
 - pandas library (`pip install pandas`)
+- openpyxl library (`pip install openpyxl`)
 
 ## Usage
 
