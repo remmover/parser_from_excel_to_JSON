@@ -4,7 +4,7 @@ import os
 
 
 def excel_to_json(excel_file):
-    filename = os.path.splitext(excel_file)[0][5:]
+    filename = os.path.splitext(excel_file)[0][2:]
     xls = pd.ExcelFile(excel_file)
     sheet_names = xls.sheet_names
 
@@ -12,18 +12,18 @@ def excel_to_json(excel_file):
     keys = []
     for sheet_name in sheet_names:
 
-        df = pd.read_excel(excel_file, sheet_name=sheet_name, usecols=["Keys for developers", filename])
+        df = pd.read_excel(excel_file, sheet_name=sheet_name, usecols=["id-key", filename])
 
         data[f"-------------- {sheet_name} --------------"] = f"-------------- {sheet_name} --------------"
 
         for index, row in df.iterrows():
-            key = row["Keys for developers"]
+            key = row["id-key"]
             value = row[filename]
 
             if (pd.notna(key) and key != ' ') and (pd.notna(value) and value != ' '):
                 if key not in keys:
                     keys.append(key)
-                    data[key.replace(' ', '')] = value
+                    data[key] = value
                 else:
                     raise Exception(f"Key with this name already exists: {key}")
 
