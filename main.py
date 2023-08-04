@@ -46,11 +46,11 @@ def excel_to_json(excel_file):
         json.dump(data, file, ensure_ascii=False, indent=4)
 
 
-folder_path = "."
-excel_files = [file for file in os.listdir(folder_path) if file.endswith(".xlsx")]
+FOLDER_PATH = "."
+excel_files = [file for file in os.listdir(FOLDER_PATH) if file.endswith(".xlsx")]
 
 for excel_file in excel_files:
-    excel_to_json(os.path.join(folder_path, excel_file))
+    excel_to_json(os.path.join(FOLDER_PATH, excel_file))
 
 # import pandas as pd
 # import json
