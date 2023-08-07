@@ -1,44 +1,81 @@
 # Excel to JSON Converter
 
-This is a Python script that converts Excel files (.xlsx) into JSON files. It reads each sheet in the Excel file, extracts specific columns, and converts the data into a JSON format. The resulting JSON files can be used for localization or any other purpose requiring JSON data.
+This Python script converts data from Excel files (.xlsx) into JSON format, creating separate JSON files for each sheet in the Excel file. It allows you to customize the columns to parse by modifying specific variables. The script extracts data from the specified columns in the Excel sheets and structures the data into a dictionary format before writing it to JSON files. The script ensures that each key is unique and handles cases where multiple Excel files are present in the specified directory.
 
-## Prerequisites
+## Table of Contents
 
-To run this script, you need to have the following installed:
+- [Installation](#installation)
+- [Usage](#usage)
+- [Customization](#customization)
+- [File Structure](#file-structure)
+- [Example Excel Files](#example-excel-files)
+- [Contributing](#contributing)
+- [License](#license)
 
-- Python 3.x
-- pandas library (`pip install pandas`)
-- openpyxl library (`pip install openpyxl`)
+## Installation
+
+1. Clone this repository to your local machine using:
+
+   ```bash
+   git clone https://github.com/your-username/excel-to-json-converter.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd excel-to-json-converter
+   ```
+
+3. Install the required Python libraries using:
+
+   ```bash
+   pip install pandas
+   ```
 
 ## Usage
 
-1. Place the Excel files you want to convert into the same directory as the script.
-2. Open a terminal or command prompt and navigate to the directory containing the script.
-3. Run the following command:
+1. Place your Excel files (with a `.xlsx` extension) in the project directory.
 
-```shell
-python excel_to_json_converter.py
-```
+2. Open a terminal and navigate to the project directory.
 
-The script will process all the Excel files in the directory and generate corresponding JSON files in a new directory called "locales".
+3. Run the script by executing:
+
+   ```bash
+   python excel_to_json_converter.py
+   ```
+
+4. The script will process the Excel files, convert data from each sheet into JSON format, and create corresponding JSON files in the `locales` directory.
 
 ## Customization
 
-If you need to modify the script to suit your specific requirements, you can edit the following parts:
+You can customize the columns that the script will parse by modifying the following variables in the `excel_to_json_converter.py` script:
 
-- **Excel Columns**: The script currently assumes that the relevant columns in the Excel file are named "Keys for developers" and the filename (without the extension). If your Excel files have different column names, you can update them in the `usecols` parameter of the `pd.read_excel()` function.
+- `KEY_COLUMN`: The column containing keys for developers.
+- `VALUE_COLUMN`: The column containing primary values for translation.
+- `EXTRA_VALUE_COLUMN`: The column containing additional values for translation.
 
-- **Output Directory**: By default, the script creates a "locales" directory to store the generated JSON files. If you want to change the output directory, you can modify the `json_file` variable in the script.
+Update these variables with the appropriate column names before running the script.
+
+## File Structure
+
+The project directory contains the following files:
+
+- `excel_to_json_converter.py`: The Python script responsible for converting Excel files to JSON.
+- `README.md`: This README file providing information about the project.
+- `locales/`: A directory that will be created by the script to store the generated JSON files.
+
+## Example Excel Files
+
+You can find example Excel files in the `examples` directory. These files demonstrate the expected format for the Excel data that the script can process.
+
+## Contributing
+
+Contributions to this project are welcome! If you find any issues or would like to enhance the functionality, please create a pull request or submit an issue on the GitHub repository.
 
 ## License
 
-This script is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to modify and use it according to your needs.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgements
+---
 
-- This script utilizes the [pandas](https://pandas.pydata.org/) library for reading Excel files and data manipulation.
-- Developed by remmover
-
-## Troubleshooting
-
-If you encounter any issues or have questions, please [open an issue](https://github.com/remmover/Parser.git) on the repository.
+**Disclaimer:** This project was developed by a single person and serves as a basic Excel to JSON conversion tool. It is recommended to review and test the script on sample data before using it for important tasks. The author is not responsible for any misuse or unintended consequences of using this script.
