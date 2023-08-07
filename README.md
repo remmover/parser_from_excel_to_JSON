@@ -17,13 +17,13 @@ This Python script converts data from Excel files (.xlsx) into JSON format, crea
 1. Clone this repository to your local machine using:
 
    ```bash
-   git clone https://github.com/your-username/excel-to-json-converter.git
+   git clone https://github.com/remmover/parser_from_excel_to_JSON.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd excel-to-json-converter
+   cd parser_from_excel_to_JSON
    ```
 
 3. Install the required Python libraries using:
@@ -41,7 +41,7 @@ This Python script converts data from Excel files (.xlsx) into JSON format, crea
 3. Run the script by executing:
 
    ```bash
-   python excel_to_json_converter.py
+   python parser_from_excel_to_JSON.py
    ```
 
 4. The script will process the Excel files, convert data from each sheet into JSON format, and create corresponding JSON files in the `locales` directory.
@@ -60,7 +60,7 @@ Update these variables with the appropriate column names before running the scri
 
 The project directory contains the following files:
 
-- `excel_to_json_converter.py`: The Python script responsible for converting Excel files to JSON.
+- `parser_from_excel_to_JSON.py`: The Python script responsible for converting Excel files to JSON.
 - `README.md`: This README file providing information about the project.
 - `locales/`: A directory that will be created by the script to store the generated JSON files.
 
