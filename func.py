@@ -1,15 +1,14 @@
-import os
 import json
+import os
 
 
 def process_json_file(json_file):
-    with open(json_file, 'r', encoding='utf-8') as file:
+    with open(json_file, "r", encoding="utf-8") as file:
         data = json.load(file)
-
 
     data["common:info:none"] = "None"
 
-    with open(json_file, 'w', encoding='utf-8') as file:
+    with open(json_file, "w", encoding="utf-8") as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
 
 
