@@ -58,4 +58,4 @@ for excel_file in excel_files:
     excel_to_json(os.path.join(FOLDER_PATH, excel_file))
 end_time = time.time()
 total_execution_time = end_time - start_time
-print(f"Total execution time: {total_execution_time:.2f} seconds")
+print(f"Total execution time: {total_execution_time:.5f} seconds")
