@@ -35,9 +35,9 @@ def excel_to_json(excel_file):
                 extra_value = row[EXTRA_VALUE_COLUMN].strip()
 
                 if value:
-                    data[key] = value
+                    data[key.replace(" ", "")] = value
                 elif extra_value:
-                    data[key] = extra_value
+                    data[key.replace(" ", "")] = value
 
     os.makedirs("locales", exist_ok=True)
 
