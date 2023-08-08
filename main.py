@@ -1,5 +1,6 @@
 import json
 import os
+import time
 
 import pandas as pd
 
@@ -52,6 +53,9 @@ def excel_to_json(excel_file):
 
 FOLDER_PATH = "."
 excel_files = [file for file in os.listdir(FOLDER_PATH) if file.endswith(".xlsx")]
-
+start_time = time.time()
 for excel_file in excel_files:
     excel_to_json(os.path.join(FOLDER_PATH, excel_file))
+end_time = time.time()
+total_execution_time = end_time - start_time
+print(f"Total execution time: {total_execution_time:.2f} seconds")
