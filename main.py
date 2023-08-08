@@ -26,19 +26,19 @@ def excel_to_json(excel_file):
             f"-------------- {sheet_name} --------------"
         ] = f"-------------- {sheet_name} --------------"
 
-        for index, row in df.iterrows():
+        for _, row in df.iterrows():
             key = row[KEY_COLUMN]
 
-            if pd.notna(key) and key != " ":
+            if pd.notna(key) and key:
                 if key not in keys:
                     keys.append(key)
 
                     value = row[VALUE_COLUMN]
                     extra_value = row[EXTRA_VALUE_COLUMN]
 
-                    if pd.notna(value) and value != " ":
+                    if pd.notna(value) and value:
                         data[key.replace(" ", "")] = value
-                    elif pd.notna(extra_value) and extra_value != " ":
+                    elif pd.notna(extra_value) and extra_value:
                         data[key.replace(" ", "")] = extra_value
 
                 else:
