@@ -9,7 +9,7 @@ def excel_to_json(excel_file):
     VALUE_COLUMN = "extra-value-translate"
     EXTRA_VALUE_COLUMN = "value-translate"
 
-    filename = os.path.splitext(excel_file)[0][2:]
+    filename = os.path.splitext(excel_file)[0][5:]
     xls = pd.ExcelFile(excel_file)
     sheet_names = xls.sheet_names
 
@@ -21,7 +21,6 @@ def excel_to_json(excel_file):
             sheet_name=sheet_name,
             usecols=[KEY_COLUMN, VALUE_COLUMN, EXTRA_VALUE_COLUMN],
         )
-
         data[
             f"-------------- {sheet_name} --------------"
         ] = f"-------------- {sheet_name} --------------"
@@ -37,10 +36,9 @@ def excel_to_json(excel_file):
                     extra_value = row[EXTRA_VALUE_COLUMN]
 
                     if pd.notna(value) and value != " ":
-                        data[key] = value
+                        data[key.replace(" ", "")] = value
                     elif pd.notna(extra_value) and extra_value != " ":
-                        print(key, extra_value)
-                        data[key] = extra_value
+                        data[key.replace(" ", "")] = extra_value
 
                 else:
                     raise Exception(f"Key with this name already exists: {key}")
